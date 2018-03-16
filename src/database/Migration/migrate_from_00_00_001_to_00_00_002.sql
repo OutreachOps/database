@@ -45,10 +45,10 @@ BEGIN
 			 [Minor] [int] NOT NULL,
 			 [Revision] [int] NOT NULL,
 			 [VersionUpdateTime] [datetime2] NOT NULL DEFAULT GETUTCDATE(),
-			 CONSTRAINT versionCK UNIQUE(major,minor,revision)  
-		);
+			 CONSTRAINT versionCK UNIQUE(Major,Minor,Revision)  
+		)
 
-		INSERT Versions (major,minor,revision) VALUES (0,0,2); 
+		INSERT dbo.Versions (Major,Minor,Revision) VALUES (0,0,2)
  
         IF @localTran = 1 AND XACT_STATE() = 1
             COMMIT TRAN LocalTran
